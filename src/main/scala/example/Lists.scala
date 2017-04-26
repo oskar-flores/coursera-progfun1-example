@@ -44,7 +44,6 @@ object Lists {
       def biggerFrom(a:Int, b:Int): Int = {
         if (a>b) a else b
       }
-      if (xs.isEmpty) throw java.util.NoSuchElementException
-      biggerFrom(xs.head,max(xs.tail))
+      if (xs.nonEmpty) biggerFrom(xs.head,max(xs.tail)) else Int.MinValue
     }
   }
