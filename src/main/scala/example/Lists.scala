@@ -47,10 +47,9 @@ object Lists {
   }
 
   def biggerFrom(list: List[Int], b: Int): Int = {
-    if (list.isEmpty) return b
-    else if (list.head > b) return list.head
-
-    biggerFrom(list.tail, biggerFrom(list.tail, b = list.head))
+    if (list.isEmpty) b
+    else if (list.head > b) list.head
+    else biggerFrom(list.tail, biggerFrom(list.tail, b = list.head))
   }
 
 }
